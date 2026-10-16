@@ -68,7 +68,7 @@ class SlotTable:
             )
 
         first = times.index(start)
-        picked = day[first: first + count]
+        picked = day[first : first + count]
         if len(picked) < count:
             raise SlotLookupError(
                 f"Only {len(picked)} slot(s) left on court {court} from {start}"

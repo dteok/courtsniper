@@ -3,18 +3,15 @@ name = "courtsniper"
 version = "0.1.0"
 requires-python = ">=3.11"
 
-[tool.ruff]
-line-length = 88
-target-version = "py311"
-
-[tool.ruff.lint]
-select = ["E", "F", "W", "I", "B", "UP"]
-
 [tool.black]
 line-length = 88
 
-[tool.pytest.ini_options]
-testpaths = ["tests"]
+[tool.ruff]
+line-length = 88
+target-version = "py313"
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "B", "UP"]
 
 [tool.pylint.main]
 py-version = "3.13"
@@ -29,3 +26,7 @@ disable = [
   "missing-function-docstring",
   "missing-class-docstring",
 ]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "--cov=courtsniper --cov-report=term-missing"

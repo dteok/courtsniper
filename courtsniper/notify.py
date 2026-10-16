@@ -1,9 +1,10 @@
 """SMS notifications via Twilio, with a log-only fallback."""
 
 from __future__ import annotations
-import logging
 
+import logging
 from typing import Protocol
+
 from twilio.rest import Client  # imported lazily: optional dependency
 
 from .config import Settings
