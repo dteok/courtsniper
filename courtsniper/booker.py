@@ -138,8 +138,9 @@ def check_confirm(page: ConfirmPage | None, slots: list[Slot], day: date) -> str
         return "No booking form on confirm page (slot taken or not bookable)."
     if page.vc is None:
         return "No vc token on confirm page."
+    expected_ctids = [s.ctid for s in slots]
     if page.ct_ids != [s.ctid for s in slots]:
-        return f"Confirming listing slots {page.ct_ids}, expected {[s.ctid for s in slots]}."
+        return f"Confirming listing slots {page.ct_ids}, expected {expected_ctids}."
     if page.fields.get("dt") != format_dt(day):
         return (
             f"Confirm page date {page.fields.get('dt')!r}, expected {format_dt(day)!r}."

@@ -5,12 +5,11 @@ from pathlib import Path
 
 import pytest
 
-from courtsniper.slots import SlotLookupError
 from courtsniper.booker import book, probe
 from courtsniper.client import Outcome, format_dt
 from courtsniper.config import Settings, Target
 from courtsniper.scheduler import now_in, target_date
-from courtsniper.slots import SlotTable
+from courtsniper.slots import SlotLookupError, SlotTable
 
 TABLE = SlotTable.from_csv(Path(__file__).parent.parent / "data" / "court_ctids.csv")
 
@@ -75,7 +74,8 @@ def confirm_page(ct_ids="28169,28170", dt=None, court=2):
         f'<form action="bookings_process_multi.asp">'
         f"<script>document.write('<inp'+'ut name=\"vc\" value=\"A52'+'15\">')</script>"
         f'<input name="dt" type="hidden" value="{dt}">'
-        f'<strong>Clay Court {court}</strong><input name="ctid_csv" type="hidden" value="{ct_ids}">'
+        f"<strong>Clay Court {court}</strong>"
+        f'<input name="ctid_csv" type="hidden" value="{ct_ids}">'
         f"</form>"
     )
 

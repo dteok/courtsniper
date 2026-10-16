@@ -31,7 +31,7 @@ def wait_until(
     Args:
         moment (datetime): The target time to wait until.
         now_fn (Callable[[], datetime]): Function returning the current time.
-        sleep_fn (Callable[[float], None]): Function to sleep for a given number of seconds.
+        sleep_fn (Callable[[float], None]): Sleep for a given number of seconds.
     Returns:
         float: The number of seconds waited.
     """
