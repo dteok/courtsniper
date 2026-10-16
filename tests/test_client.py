@@ -1,9 +1,12 @@
-"""tests for courtsniper.client"""
+"""Tests for courtsniper.client."""
 
 from datetime import date
 from pathlib import Path
 
+import pytest
+
 from courtsniper.client import (
+    UnsafeUrlError,
     Outcome,
     classify_result,
     extract_vc,
@@ -21,22 +24,48 @@ LOGIN_PAGE = """
 </form>"""
 
 
-# pylint: disable=missing-module-docstring
 def test_format_dt_has_no_leading_zero():
+    """The site writes days without a leading zero."""
     assert format_dt(date(2026, 10, 9)) == "9 October 2026"
     assert format_dt(date(2026, 10, 12)) == "12 October 2026"
 
 
-# pylint: disable=missing-module-docstring
 def test_find_login_form():
+    """Login form parsing keeps only safe fields and the same-origin action."""
     form = find_login_form(LOGIN_PAGE, "https://club.example/")
     assert form.action == "https://club.example/login_check.asp"
-    assert (form.user_field, form.password_field) == ("username", "password")
-    assert form.fields == {"token": "abc", "username": "", "password": ""}
+    assert (form.username_field, form.password_field) == ("username", "password")
+    # Only the allow-listed CSRF-style hidden input survives.
+    assert form.hidden_fields == {"token": "abc"}
 
 
-# pylint: disable=missing-module-docstring
+def test_find_login_form_drops_planted_fields():
+    """A page-planted input that is not a known token name is never echoed."""
+    page = LOGIN_PAGE.replace(
+        '<input type="checkbox" name="remember">',
+        '<input type="hidden" name="evil" value="x">'
+        '<input type="hidden" name="password_hint" value="y">',
+    )
+    form = find_login_form(page, "https://club.example/")
+    assert form.hidden_fields == {"token": "abc"}
+
+
+def test_find_login_form_rejects_off_origin_action():
+    """Credentials must never be posted to another host (SSRF/exfil defence)."""
+    page = LOGIN_PAGE.replace('action="login_check.asp"', 'action="https://evil.test/x"')
+    with pytest.raises(UnsafeUrlError):
+        find_login_form(page, "https://club.example/")
+
+
+def test_find_login_form_rejects_downgraded_scheme():
+    """An http: action on an https page is refused outright."""
+    page = LOGIN_PAGE.replace('action="login_check.asp"', 'action="http://club.example/"')
+    with pytest.raises(UnsafeUrlError):
+        find_login_form(page, "https://club.example/")
+
+
 def test_no_login_form_when_logged_in():
+    """Pages without a password form return None."""
     assert find_login_form("<a href='logout.asp'>Log out</a>", "https://x/") is None
 
 
@@ -45,8 +74,8 @@ REAL_CONFIRM = (Path(__file__).parent / "fixtures" / "confirm_court7.html").read
 )
 
 
-# pylint: disable=missing-module-docstring
 def test_parse_real_confirm_page():
+    """The real fixture's obfuscated vc token, date and slot ids are parsed."""
     page = parse_confirm(REAL_CONFIRM)
     assert page.vc == "81F2C"  # written by obfuscated document.write
     assert page.fields["dt"] == "16 October 2026"
@@ -55,8 +84,8 @@ def test_parse_real_confirm_page():
     assert not page.shows_court(1)  # "Court 7" must not match court 1 or 17
 
 
-# pylint: disable=missing-module-docstring
 def test_extract_vc_variants():
+    """vc tokens are found in plain inputs and document.write-obfuscated ones."""
     plain = (
         '<form action="bookings_process_multi.asp"><input type="hidden" '
         'name="vc" value="A5215"></form>'
@@ -70,8 +99,8 @@ def test_extract_vc_variants():
     assert extract_vc("<p>Court already booked</p>") is None
 
 
-# pylint: disable=missing-module-docstring
 def test_classify_result():
+    """Outcome comes from visible text; ambiguous pages are UNVERIFIED."""
     assert classify_result("<h1>Booking confirmed</h1>") is Outcome.SUCCESS
     assert (
         classify_result("<p>Sorry, this court has already been booked</p>")
@@ -83,10 +112,14 @@ def test_classify_result():
         classify_result("<script>'sorry'</script><p>Booking confirmed</p>")
         is Outcome.SUCCESS
     )
+    # a page that claims both success and failure is never trusted
+    assert (
+        classify_result("<p>Booking confirmed. Sorry.</p>") is Outcome.UNVERIFIED
+    )
 
 
-# pylint: disable=missing-module-docstring
 def test_real_result_page_shows_booking():
+    """Booked-by-me blocks must match the exact day and court number."""
     html = (Path(__file__).parent / "fixtures" / "result_court7.html").read_text(
         encoding="utf-8"
     )
