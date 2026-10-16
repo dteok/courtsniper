@@ -1,0 +1,31 @@
+[project]
+name = "courtsniper"
+version = "0.1.0"
+requires-python = ">=3.11"
+
+[tool.ruff]
+line-length = 88
+target-version = "py311"
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "B", "UP"]
+
+[tool.black]
+line-length = 88
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+[tool.pylint.main]
+py-version = "3.13"
+
+[tool.pylint.format]
+max-line-length = 100
+
+[tool.pylint."messages control"]
+disable = [
+  "too-few-public-methods",   # config/data classes
+  # TEMPORARY: remove once docstrings are written
+  "missing-function-docstring",
+  "missing-class-docstring",
+]

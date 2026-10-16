@@ -1,0 +1,7 @@
+# Used by setup.sh: builds the image with the least-privilege courtsniper-builder account.
+steps:
+  - name: gcr.io/cloud-builders/docker
+    args: ["build", "-t", "${_IMAGE}", "."]
+images: ["${_IMAGE}"]
+options:
+  logging: CLOUD_LOGGING_ONLY   # required when a build runs as a user-specified service account

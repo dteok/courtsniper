@@ -1,0 +1,4 @@
+[
+  {"name": "delete-all", "action": {"type": "Delete"}, "condition": {"tagState": "any"}},
+  {"name": "keep-2-most-recent", "action": {"type": "Keep"}, "mostRecentVersions": {"keepCount": 2}}
+]

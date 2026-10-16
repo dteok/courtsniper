@@ -1,0 +1,193 @@
+court,surface,time,ctid,status
+1,clay,08:00,45402,observed
+1,clay,08:30,45403,observed
+1,clay,09:00,45404,observed
+1,clay,09:30,39858,observed
+1,clay,10:00,39859,observed
+1,clay,10:30,39860,observed
+1,clay,11:00,28141,inferred
+1,clay,11:30,28142,inferred
+1,clay,12:00,28143,observed
+1,clay,12:30,28144,observed
+1,clay,13:00,28145,observed
+1,clay,13:30,28146,observed
+1,clay,14:00,28147,inferred
+1,clay,14:30,28148,inferred
+1,clay,15:00,28149,observed
+1,clay,15:30,28150,observed
+1,clay,16:00,28151,observed
+1,clay,16:30,28152,inferred
+1,clay,17:00,28153,inferred
+1,clay,17:30,28154,inferred
+1,clay,18:00,28155,inferred
+1,clay,18:30,28156,inferred
+1,clay,19:00,28157,inferred
+1,clay,19:30,28158,observed
+1,clay,20:00,28159,observed
+1,clay,20:30,28160,observed
+2,clay,08:00,45405,observed
+2,clay,08:30,45406,observed
+2,clay,09:00,45407,observed
+2,clay,09:30,39861,observed
+2,clay,10:00,39862,observed
+2,clay,10:30,39863,observed
+2,clay,11:00,28161,inferred
+2,clay,11:30,28162,observed
+2,clay,12:00,28163,observed
+2,clay,12:30,28164,observed
+2,clay,13:00,28165,observed
+2,clay,13:30,28166,inferred
+2,clay,14:00,28167,observed
+2,clay,14:30,28168,observed
+2,clay,15:00,28169,observed
+2,clay,15:30,28170,observed
+2,clay,16:00,28171,observed
+2,clay,16:30,28172,inferred
+2,clay,17:00,28173,inferred
+2,clay,17:30,28174,inferred
+2,clay,18:00,28175,inferred
+2,clay,18:30,28176,inferred
+2,clay,19:00,28177,inferred
+2,clay,19:30,28178,observed
+2,clay,20:00,28179,observed
+2,clay,20:30,28180,observed
+7,tiger turf,08:00,26761,observed
+7,tiger turf,08:30,26762,observed
+7,tiger turf,09:00,26763,observed
+7,tiger turf,09:30,26764,observed
+7,tiger turf,10:00,26765,inferred
+7,tiger turf,10:30,26766,inferred
+7,tiger turf,11:00,26767,inferred
+7,tiger turf,11:30,26768,inferred
+7,tiger turf,12:00,26769,inferred
+7,tiger turf,12:30,26770,inferred
+7,tiger turf,13:00,26771,inferred
+7,tiger turf,13:30,26772,inferred
+7,tiger turf,14:00,26773,observed
+7,tiger turf,14:30,26774,observed
+7,tiger turf,15:00,26775,observed
+7,tiger turf,15:30,26776,inferred
+7,tiger turf,16:00,26777,inferred
+7,tiger turf,16:30,26778,inferred
+7,tiger turf,17:00,26779,inferred
+7,tiger turf,17:30,26780,inferred
+7,tiger turf,18:00,26781,inferred
+7,tiger turf,18:30,26782,inferred
+7,tiger turf,19:00,26783,inferred
+7,tiger turf,19:30,26784,inferred
+7,tiger turf,20:00,26785,inferred
+7,tiger turf,20:30,26786,inferred
+7,tiger turf,21:00,33879,observed
+7,tiger turf,21:30,33880,observed
+8,tiger turf,08:00,26787,observed
+8,tiger turf,08:30,26788,observed
+8,tiger turf,09:00,26789,observed
+8,tiger turf,09:30,26790,inferred
+8,tiger turf,10:00,26791,inferred
+8,tiger turf,10:30,26792,inferred
+8,tiger turf,11:00,26793,inferred
+8,tiger turf,11:30,26794,inferred
+8,tiger turf,12:00,26795,observed
+8,tiger turf,12:30,26796,observed
+8,tiger turf,13:00,26797,observed
+8,tiger turf,13:30,26798,inferred
+8,tiger turf,14:00,26799,inferred
+8,tiger turf,14:30,26800,observed
+8,tiger turf,15:00,26801,observed
+8,tiger turf,15:30,26802,observed
+8,tiger turf,16:00,26803,inferred
+8,tiger turf,16:30,26804,inferred
+8,tiger turf,17:00,26805,inferred
+8,tiger turf,17:30,26806,inferred
+8,tiger turf,18:00,26807,inferred
+8,tiger turf,18:30,26808,inferred
+8,tiger turf,19:00,26809,observed
+8,tiger turf,19:30,26810,inferred
+8,tiger turf,20:00,26811,inferred
+8,tiger turf,20:30,33881,observed
+8,tiger turf,21:00,33882,observed
+8,tiger turf,21:30,39856,observed
+9,tiger turf,08:00,29396,observed
+9,tiger turf,08:30,26812,observed
+9,tiger turf,09:00,26813,observed
+9,tiger turf,09:30,26814,inferred
+9,tiger turf,10:00,26815,inferred
+9,tiger turf,10:30,26816,inferred
+9,tiger turf,11:00,26817,inferred
+9,tiger turf,11:30,26818,inferred
+9,tiger turf,12:00,26819,inferred
+9,tiger turf,12:30,26820,inferred
+9,tiger turf,13:00,26821,inferred
+9,tiger turf,13:30,26822,observed
+9,tiger turf,14:00,26823,observed
+9,tiger turf,14:30,26824,observed
+9,tiger turf,15:00,26825,inferred
+9,tiger turf,15:30,26826,inferred
+9,tiger turf,16:00,26827,inferred
+9,tiger turf,16:30,26828,inferred
+9,tiger turf,17:00,26829,inferred
+9,tiger turf,17:30,26830,inferred
+9,tiger turf,18:00,26831,inferred
+9,tiger turf,18:30,26832,inferred
+9,tiger turf,19:00,26833,inferred
+9,tiger turf,19:30,26834,inferred
+9,tiger turf,20:00,26835,inferred
+9,tiger turf,20:30,26836,observed
+9,tiger turf,21:00,33883,observed
+9,tiger turf,21:30,33884,observed
+10,tiger turf,08:00,29397,observed
+10,tiger turf,08:30,26837,observed
+10,tiger turf,09:00,26838,observed
+10,tiger turf,09:30,26839,inferred
+10,tiger turf,10:00,26840,inferred
+10,tiger turf,10:30,26841,inferred
+10,tiger turf,11:00,26842,observed
+10,tiger turf,11:30,26843,observed
+10,tiger turf,12:00,26844,observed
+10,tiger turf,12:30,26845,inferred
+10,tiger turf,13:00,26846,inferred
+10,tiger turf,13:30,26847,inferred
+10,tiger turf,14:00,26848,inferred
+10,tiger turf,14:30,26849,inferred
+10,tiger turf,15:00,26850,observed
+10,tiger turf,15:30,26851,observed
+10,tiger turf,16:00,26852,observed
+10,tiger turf,16:30,26853,inferred
+10,tiger turf,17:00,26854,inferred
+10,tiger turf,17:30,26855,inferred
+10,tiger turf,18:00,26856,inferred
+10,tiger turf,18:30,26857,inferred
+10,tiger turf,19:00,26858,inferred
+10,tiger turf,19:30,26859,inferred
+10,tiger turf,20:00,26860,inferred
+10,tiger turf,20:30,33885,observed
+10,tiger turf,21:00,33886,observed
+10,tiger turf,21:30,39857,observed
+11,tiger turf,08:00,26861,observed
+11,tiger turf,08:30,26862,observed
+11,tiger turf,09:00,26863,observed
+11,tiger turf,09:30,26864,inferred
+11,tiger turf,10:00,26865,inferred
+11,tiger turf,10:30,26866,inferred
+11,tiger turf,11:00,26867,inferred
+11,tiger turf,11:30,26868,inferred
+11,tiger turf,12:00,26869,inferred
+11,tiger turf,12:30,26870,inferred
+11,tiger turf,13:00,26871,inferred
+11,tiger turf,13:30,26872,inferred
+11,tiger turf,14:00,26873,inferred
+11,tiger turf,14:30,26874,inferred
+11,tiger turf,15:00,26875,inferred
+11,tiger turf,15:30,26876,inferred
+11,tiger turf,16:00,26877,inferred
+11,tiger turf,16:30,26878,inferred
+11,tiger turf,17:00,26879,inferred
+11,tiger turf,17:30,26880,inferred
+11,tiger turf,18:00,26881,inferred
+11,tiger turf,18:30,26882,inferred
+11,tiger turf,19:00,26883,inferred
+11,tiger turf,19:30,26884,inferred
+11,tiger turf,20:00,26885,inferred
+11,tiger turf,20:30,26886,inferred
+11,tiger turf,21:00,33887,observed
+11,tiger turf,21:30,33888,observed

@@ -1,0 +1,18 @@
+# Copy to config.toml and edit. Secrets go in .env, not here.
+
+[club]
+base_url = "https://brenthamclub.mycourts.co.uk"
+timezone = "Europe/London"
+
+[booking]
+lead_days = 4                # book the day 4 days ahead
+release_time = "07:15:00"    # when that day opens
+fire_delay_ms = 250          # small margin so we never fire before the server opens
+
+[target]
+court = 2                    # clay: 1, 2   tiger turf: 7-11
+start = "15:00"              # first slot
+slots = 2                    # 30-min slots (2 = 1 hour)
+
+[notify]
+on_failure = true            # also text on failure, not just success

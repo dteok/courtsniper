@@ -1,0 +1,212 @@
+
+<!DOCTYPE html>
+<html>
+<!-- InstanceBegin template="/Templates/_template_v3.dwt.asp" codeOutsideHTMLIsLocked="false" -->
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, minimum-scale=1.0, user-scalable=yes">
+<meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+<meta name="keywords" content="Brentham Lawn Tennis Club, Brentham Lawn Tennis Club court booking system, booking system, court booking system, squash, squash club, squash court booking system, online court booking system, online squash court booking system, touch screen booking system, squash touch screen booking system, tennis, tennis club, tennis court booking system, online tennis court booking system, touch screen booking system, tennis touch screen booking system, " />
+<meta name="description" content="Brentham Lawn Tennis Club Booking Sheets" />
+<link rel="icon" type="image/x-icon" href="/images/mycourts_favicon.png">
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>Your Bookings</title>
+<!-- InstanceEndEditable -->
+<link href="stylesheets/stylesheet.css" rel="stylesheet" type="text/css" />
+<script language="javascript" src="javascripts.js" type="text/javascript"></script>
+<!-- InstanceBeginEditable name="head" -->
+<script>
+function confirm_cancel(btn,bid,sbid){   
+	if (confirm('Are you sure you want to cancel your booking?')) { 
+		btn.style.display='none'; 
+		document.getElementById('cancel'+bid.toString()).style.display='inline-block';
+		window.location.href = 'bookings_cancel.asp?bid='+ sbid.toString()
+	}
+}
+</script>
+<style>
+TABLE.course_booking UL {
+	padding-left:20px;
+}
+TR.expired TD {
+	color:#bbb;
+}
+ @media only screen and (max-width:600px) {
+TABLE.my_bookings TR TD:nth-child(1) SPAN::after {
+	content:"\a";
+	white-space:pre;
+}
+}
+</style>
+<!-- InstanceEndEditable -->
+<link href="stylesheets/stylesheet_130.css" rel="stylesheet" type="text/css" />
+
+<link href="stylesheets/mobile.css" rel="stylesheet" type="text/css" />
+
+</head>
+<body>
+<div id="wrapper">
+  <div id="header"></div>
+  <div class="desktop" id="nav"> 
+    <a target="_blank" href="https://www.brenthamclub.co.uk/">Club Website</a><a class="selected" href="bookings.asp">Booking Sheets</a><a class="" href="leagues.asp">Leagues</a><a class="" href="tournaments.asp">Tournaments</a><a class="" href="group_sessions.asp">Club Sessions</a><a href="directory.asp" class="">Members' Directory</a><a class="" href="news.asp">Newsletters</a><a href="contact_form.asp" class="" name="contact_link" id="contact_link">Contact Us</a> 
+  </div>
+  <div id="nav_cms"><!-- InstanceBeginEditable name="nav_cms" --><!-- InstanceEndEditable --></div>
+  <div class="mobile" id="mobile_nav"> 
+    
+<div id="menu_control">
+  <div><a onclick="xopen()" href="javascript:void(0);"><span class="burger">&equiv;</span>  Menu</a> <a id="menu_control_show_member" onclick="subnav_acct();" href="javascript:void(0);"> Â£0.00</a></div>
+</div>
+<div id="menu_wrapper">
+  <div class="close_wrapper"><a href="javascript:void(0)" onclick="xclose()">&times;</a></div>
+  <div id="menu_links">
+    <p id="menu_show_member">xxxnamexxx</p><ul id="menu_list"><li><a class="selected" href="my_bookings.asp">Your Bookings</a></li><li><a onClick="subnav(this)" href="javascript:void(0)">Booking Sheets</a><ul id="nav_mobile_bs"><li><a class="" href="bookings.asp?st1=&st2=&d=0">Monday 12/10/2026</a></li><li><a class="" href="bookings.asp?st1=&st2=&d=1">Tuesday 13/10/2026</a></li><li><a class="" href="bookings.asp?st1=&st2=&d=2">Wednesday 14/10/2026</a></li><li><a class="" href="bookings.asp?st1=&st2=&d=3">Thursday 15/10/2026</a></li><li><a class="" href="bookings.asp?st1=&st2=&d=4">Friday 16/10/2026</a></li><li><a class="na" href="bookings.asp?st1=&st2=&d=5">Saturday 17/10/2026</a></li><li><a class="na" href="bookings.asp?st1=&st2=&d=6">Sunday 18/10/2026</a></li><li><a class="na" href="bookings.asp?st1=&st2=&d=7">Monday 19/10/2026</a></li><li><a class="na" href="bookings.asp?st1=&st2=&d=8">Tuesday 20/10/2026</a></li><li><a class="na" href="bookings.asp?st1=&st2=&d=9">Wednesday 21/10/2026</a></li><li><a class="na" href="bookings.asp?st1=&st2=&d=10">Thursday 22/10/2026</a></li><li><a class="na" href="bookings.asp?st1=&st2=&d=11">Friday 23/10/2026</a></li><li><a class="na" href="bookings.asp?st1=&st2=&d=12">Saturday 24/10/2026</a></li><li><a class="na" href="bookings.asp?st1=&st2=&d=13">Sunday 25/10/2026</a></li><li><a class="na" href="bookings.asp?st1=&st2=&d=14">Monday 26/10/2026</a></li><li><a href="booking_rules.asp">Booking Rules</a></li></ul></li><li><a onClick="subnav(this)" href="javascript:void(0);">Your Account Â£0.00</a><ul id="account_links"><li><a  href="buy_credit.asp">Buy Credit</a></li><li><a  href="transfer.asp">Transfer Credit</a></li><li><a  href="member_account_history.asp">Account History</a></li></ul></li><li><a href="alert_courts.asp">Cancelled Court Alerts</a></li><li><a class="" href="leagues.asp">Leagues</a></li><li><a class="" href="tournaments.asp">Tournaments</a></li><li><a onClick="subnav(this)" href="javascript:void(0)">Club Sessions</a><ul id="nav_mobile_activity_dts"><li><a  class="selected" href="group_sessions.asp">Show All</a></li><li><a class="" href="group_sessions.asp?d=0">Monday 12/10/2026</a></li><li><a class="" href="group_sessions.asp?d=1">Tuesday 13/10/2026</a></li><li><a class="" href="group_sessions.asp?d=2">Wednesday 14/10/2026</a></li><li><a class="" href="group_sessions.asp?d=3">Thursday 15/10/2026</a></li><li><a class="" href="group_sessions.asp?d=4">Friday 16/10/2026</a></li><li><a class="na" href="group_sessions.asp?d=5">Saturday 17/10/2026</a></li><li><a class="na" href="group_sessions.asp?d=6">Sunday 18/10/2026</a></li><li><a class="na" href="group_sessions.asp?d=7">Monday 19/10/2026</a></li><li><a class="na" href="group_sessions.asp?d=8">Tuesday 20/10/2026</a></li><li><a class="na" href="group_sessions.asp?d=9">Wednesday 21/10/2026</a></li><li><a class="na" href="group_sessions.asp?d=10">Thursday 22/10/2026</a></li><li><a class="na" href="group_sessions.asp?d=11">Friday 23/10/2026</a></li><li><a class="na" href="group_sessions.asp?d=12">Saturday 24/10/2026</a></li><li><a class="na" href="group_sessions.asp?d=13">Sunday 25/10/2026</a></li><li><a class="na" href="group_sessions.asp?d=14">Monday 26/10/2026</a></li></ul></li><li><a href="directory.asp" class="">Members' Directory</a></li><li><a class="" href="news.asp">Newsletters</a></li><li><a onClick="subnav(this)" href="javascript:void(0);">Your Settings</a><ul><li><a href="email_notifications.asp">Email Preferences</a></li><li><a href="privacy_settings.asp">Privacy Settings</a></li><li><a href="change_password.asp">Change Password or PIN</a></li></ul></li><li><a class="" href="subscription.asp">Membership Subscription</a></li><li><a class="" href="install_app.asp">Install App</a></li><li><a target="_blank" href="https://www.brenthamclub.co.uk/">Club Website</a></li><li><a href="contact_form.asp" class="" name="contact_link" id="contact_link">Contact Us</a></li><li><a href="logout.asp">Logout</a></li></ul>
+  </div>
+</div>
+ 
+  </div>
+  <div id="col_wrapper">
+    <div id="left_col"><!-- InstanceBeginEditable name="lef_col" --> 
+      <div class="panel" id="login_panel">
+  
+  <div class="desktop">
+    <p><span id="show_member_login" >xxxnamexxx</span></p>
+    <p><a href="install_app.asp">Install App</a></p>
+    <p><a class="selected" href="my_bookings.asp">Your Bookings</a></p>
+    <p><a class="" href="alert_courts.asp">Cancelled Court Alerts</a></p>
+    <p><a class="" href="booking_rules.asp">Booking Rules</a></p>
+    
+    <p><span style="font-size:x-large; font-weight:bold;">Â£0.00</span> credit</p>
+    
+    <p><a class="" href="buy_credit.asp">Buy Credit</a></p>
+    
+    <p><a class="" href="transfer.asp">Transfer Credit</a></p>
+    <p><a class="" href="member_account_history.asp">Account History</a></p>
+    
+    <p><a class="" href="privacy_settings.asp">Privacy Settings</a></p>
+    <p><a class="" href="email_notifications.asp">Email Settings</a></p>
+    <p><a class="" href="change_password.asp">Change Password
+      
+      </a></p>
+    
+    <p><a class="" href="subscription.asp">Membership Subscription</a></p>
+    
+    <p><a id="logout_link" href="logout.asp?r=my_bookings.asp">Logout</a></p>
+  </div>
+  
+</div>
+<div class="panel desktop" id="select_date_wrapper">
+  <div id="booking_sheets_heading">Booking Sheets</div>
+  <div id="select_date">
+
+<div class="left_side_date"><a class="selected" href="bookings.asp?st1=&st2=&d=0">Monday 12/10/2026</a></div>
+<div class="left_side_date"><a class="" href="bookings.asp?st1=&st2=&d=1">Tuesday 13/10/2026</a></div>
+<div class="left_side_date"><a class="" href="bookings.asp?st1=&st2=&d=2">Wednesday 14/10/2026</a></div>
+<div class="left_side_date"><a class="" href="bookings.asp?st1=&st2=&d=3">Thursday 15/10/2026</a></div>
+<div class="left_side_date"><a class="" href="bookings.asp?st1=&st2=&d=4">Friday 16/10/2026</a></div>
+<div class="left_side_date"><a class="na" href="bookings.asp?st1=&st2=&d=5">Saturday 17/10/2026</a></div>
+<div class="left_side_date"><a class="na" href="bookings.asp?st1=&st2=&d=6">Sunday 18/10/2026</a></div>
+<div class="left_side_date"><a class="na" href="bookings.asp?st1=&st2=&d=7">Monday 19/10/2026</a></div>
+<div class="left_side_date"><a class="na" href="bookings.asp?st1=&st2=&d=8">Tuesday 20/10/2026</a></div>
+<div class="left_side_date"><a class="na" href="bookings.asp?st1=&st2=&d=9">Wednesday 21/10/2026</a></div>
+<div class="left_side_date"><a class="na" href="bookings.asp?st1=&st2=&d=10">Thursday 22/10/2026</a></div>
+<div class="left_side_date"><a class="na" href="bookings.asp?st1=&st2=&d=11">Friday 23/10/2026</a></div>
+<div class="left_side_date"><a class="na" href="bookings.asp?st1=&st2=&d=12">Saturday 24/10/2026</a></div>
+<div class="left_side_date"><a class="na" href="bookings.asp?st1=&st2=&d=13">Sunday 25/10/2026</a></div>
+<div class="left_side_date"><a class="na" href="bookings.asp?st1=&st2=&d=14">Monday 26/10/2026</a></div>
+
+  </div>
+  <p><a id="nav_booking_rules" class="" href="booking_rules.asp">Booking Rules</a> </p>
+  <!-- div id="qr_code"><img src="imgs/qr/130.png" width="145" height="145" /></div -->
+</div>
+ 
+      <!-- InstanceEndEditable --></div>
+    <div id="right_col"><!-- InstanceBeginEditable name="content" -->
+      <div class="content">
+        <p class="mobile"><a class="small_button" href="bookings.asp">Booking Sheets</a></p>
+        <h1>xxxnamexxx</h1>
+        
+        <div class="my_booking booked_by_me">
+          <form method="post" id="17A04EC4FFF8" class="my_booking_form">
+            <input name="bids_csv" type="hidden" value="34008037,34008038,34008039">
+            <p><strong><a href="bookings.asp?st1=600&st2=1300&d=4&tabID=236">Friday 16 October 2026<br>
+              800, 830, 900 hrs (90 minutes)<br>
+              Tennis Court 7</a></strong></p>
+            <p>Booked by <a href="profile.asp?memberID=221844">xxxnamexxx</a></p><p><a href="my_bookings_invitation.asp?bid_csv=34008037,34008038,34008039">Send invitation link</a></p><p><a href="my_bookings_select_opponent.asp?bid_csv=34008037,34008038,34008039&ctypeid=2">Select playing partners</a></p>
+            <p><a href="https://api.whatsapp.com/send?text=Friday+16+October+2026%0D%0A800+hrs+%2890+mins%29%0D%0ATennis+Court+7%0D%0Ahttps%3A%2F%2Fbrenthamclub%2Emycourts%2Eco%2Euk%2F" data-action="share/whatsapp/share"><img src="images/icons/WhatsApp.png" alt="WhatsApp" border="0" class="icon"></a> 
+            <a href="javascript:void(0);" onClick="var share_data={ text:'Friday 16 October 2026\n800 hrs (90 mins)\nTennis Court 7\nhttps://brenthamclub.mycourts.co.uk/'}; navigator.share(share_data);"><img src="images/icons/share.png" alt="share" border="0" class="icon"></a> <a href="mailto:?subject=Friday 16 October 2026, 800 hrs (90 mins), Tennis Court 7&body=https://brenthamclub.mycourts.co.uk/"><img src="images/icons/email.png" alt="send email" border="0" class="icon"  /></a> 
+              <!-- a href="mailto:?subject=Friday 16 October 2026; 800 hrs (90 mins); Tennis Court 7&body=https://brenthamclub.mycourts.co.uk/"><img src="images/icons/outlook.png" alt="send email" border="0" class="icon_email"  /></a --> 
+            </p>
+            <p><a href="javascript:void(0)" onClick="confirm_cancel('17A04EC4FFF8');" class="small_button cancel">cancel</a></p>
+          </form>
+        </div>
+<div style="clear:both"></div>
+<script>
+function confirm_cancel(formid) {
+	var frm = document.getElementById(formid);
+	frm.action = 'bookings_cancel_confirm.asp';
+	frm.submit();
+	}
+</script>
+        
+        <!-- p>Click on the envelope <img src="images/email.png" alt="envelope" class="img_inline" /> (&quot;mailto&quot; link) to launch a new email message window to your partner(s) or opponent(s) -- this only works if you have an email programme installed on your computer.</p>
+        <p><strong>Attn web-mail users</strong> (eg. GMail, Hotmail, etc): you can install a browser plugin or adjust your computer settings to make &quot;mailto&quot; links work on your computer. For instructions, search the web for &quot;[mail service] mailto link&quot;, eg &quot;Hotmail mailto link&quot;.</p -->
+        
+        <h2>Club Sessions</h2>
+        <div class="table_wrapper">
+          <table border="0" cellpadding="0" cellspacing="1" class="form_table my_bookings">
+            
+            <tr>
+              <th colspan="5"><a href="group_sessions.asp?d=3">Thursday 15/10/2026</a></th>
+            </tr>
+            
+            <tr>
+              <td>2000 - 2130 hrs</td>
+              <td><span style="text-transform:uppercase">Club Night</span></td>
+              <td>court 8</td>
+              <td>Â£0.00</td>
+              <td><a href="activity_cancel.asp?abid=1591393">cancel</a></td>
+            </tr>
+            
+          </table>
+        </div>
+        
+        <div style="margin:1em 0 2em 0;"> 
+           
+        </div>
+        <p><a href="booking_rules.asp">Booking Rules</a></p>
+        <p><a href="member_account_history.asp">Account History</a></p>
+        <p><a href="member_booking_history.asp">Playing History</a></p>
+        <div style="clear:both"></div>
+      </div>
+      <!-- InstanceEndEditable --></div>
+    <div class="end_floats"></div>
+  </div>
+  <div id="footer"> 
+    <div id="footer_address">
+  <div class="content">
+    <p><strong>Brentham Lawn Tennis Club</strong></p>
+    <p>38a Meadvale Road &#8226; Ealing, London &#8226; <span style="white-space:nowrap">W5 1NP</span></p>
+    <p><span style="white-space:nowrap">Tel: <a href="tel:02089972624">0208 997 2624</a></span></p>
+  </div>
+  <div id="footer_disclaimer_links"><a href="terms_and_conditions.asp">Terms &amp; Conditions</a> &#8226; <a href="privacy.asp">Privacy Policy</a> &#8226; <a href="copyright_notice.asp">Copyright</a></div>
+  <div id="facebook_twitter">
+    <p>
+      
+    </p>
+  </div>
+</div>
+ 
+  </div>
+</div>
+<div id="sponsors"></div>
+<div id="hbi"> 
+  <div id="mycourts_wrapper" class="content dont-break-out">
+  <div id="mycourts_logo_wrapper"><a href="https://mycourts.co.uk/" target="_blank"><img id="mycourts_logo" src="/images/mycourts_black_150.png" alt="MYCOURTS squash and tennis court booking system" border="0" /></a></div>
+  <a href="https://mycourts.co.uk/" target="_blank">mycourts</a> &reg; is a Registered Trademark of <a href="http://www.hbiconsulting.co.uk" target="_blank">HBI Consulting Ltd</a><br />
+  Copyright &copy; 2005-2026 <a href="http://www.hbiconsulting.co.uk/" target="_blank">HBI Consulting Ltd</a> </div>
+ 
+</div>
+</body>
+<script language="javascript" src="js/javascripts.js" type="text/javascript"></script>
+<!-- InstanceEnd -->
+</html>
